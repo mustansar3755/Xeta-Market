@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #07060b;
+  --color-navy: #100c16;
+  --color-panel: #17111f;
+  --color-panel2: #201628;
+  --color-edge: #362a3c;
+  --color-mist: #ab9fb5;
+  --color-cloud: #f5f1f8;
+  --color-signal: #8c1d40;
+  --color-signal2: #e63462;
+  --color-gold: #f5b441;
+  --color-go: #34d399;
+
+  --font-display: "Sora", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
+
+  --shadow-glow: 0 0 40px -8px rgba(230, 52, 98, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-cloud);
+  font-family: var(--font-body);
+}
+
+::selection {
+  background: var(--color-signal2);
+  color: var(--color-ink);
+}
+
+.grid-fade {
+  background-image:
+    linear-gradient(rgba(171,159,181,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(171,159,181,0.07) 1px, transparent 1px);
+  background-size: 42px 42px;
+  -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 40%, transparent 80%);
+  mask-image: radial-gradient(ellipse 60% 50% at 50% 0%, #000 40%, transparent 80%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
